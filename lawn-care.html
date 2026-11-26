@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lawn mowing and fall cleanup in Calgary: Happy Home Owners (concept)</title>
+<meta name="description" content="One-time lawn mowing and fall cleanups priced by lawn size, from $56.25.">
+<link rel="preload" href="assets/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Archivo Variable';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(assets/archivo.woff2) format('woff2-variations')}
+:root{
+  --tar:#171A21;--tar2:#22262B;--snowbank:#F3F4F2;--white:#fff;
+  --ink:#15171A;--ink2:#4A5057;--ink3:#767C84;--rule:#D3D8DD;
+  --hi:#FFC42E;--hi-d:#D99A00;--vest:#D4F23A;--tape:#C9CED3;
+  --f:"Archivo Variable",Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --e:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 18px/1.55 var(--f);color:var(--ink);background:var(--white);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,ol,dl,dd,figure,blockquote,fieldset{margin:0;padding:0;border:0}
+ul,ol{list-style:none}
+a{color:inherit}
+a[href^='tel']{white-space:nowrap}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:3px solid var(--hi);outline-offset:3px}
+.wrap{width:min(1240px,100% - 56px);margin-inline:auto}
+h1,h2,h3,.cond{font-stretch:68%;font-weight:800;line-height:.96;letter-spacing:-.01em}
+h2{font-size:clamp(44px,6.2vw,92px);text-wrap:balance}
+h3{font-size:34px;line-height:1}
+mark{background:none;color:inherit}
+
+.concept{background:#000;color:#B9BEC4;font-size:13.5px;line-height:1.4;text-align:center;padding:7px 20px}
+
+/* buttons look like equipment labels: flat, hard, heavy */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:4px;background:var(--hi);color:var(--tar);font-weight:800;font-size:17px;font-stretch:88%;text-decoration:none;white-space:nowrap;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);transition:transform .12s,box-shadow .12s,background .15s}
+.btn:hover{background:#FFDD4A}
+.btn:active{transform:translateY(2px);box-shadow:inset 0 -1px 0 rgba(0,0,0,.18)}
+.btn.wide{width:100%}
+.go{font-weight:800;font-stretch:88%;border-bottom:3px solid var(--hi);padding-bottom:2px;transition:border-color .15s,padding .2s var(--e)}
+.go::after{content:"";display:inline-block;width:.55em;height:.55em;margin-left:.5em;border-top:3px solid currentColor;border-right:3px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform .2s var(--e)}
+.go:hover::after{transform:translateX(5px) rotate(45deg) translateY(-1px)}
+
+/* header */
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:24px;padding:10px max(28px,calc((100% - 1240px)/2));background:var(--tar);color:#fff}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:21px;font-stretch:75%;letter-spacing:.005em;white-space:nowrap}
+.brand img{width:44px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;font-size:16px;font-weight:600;color:#C5CAD0;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.nav a:hover,.nav a.here{color:#fff;border-color:var(--hi)}
+.tel{font-weight:800;font-stretch:80%;font-size:20px;text-decoration:none;letter-spacing:.01em}
+.tel:hover{color:var(--hi)}
+.top .btn{min-height:44px;padding:0 18px;font-size:16px}
+.burger{display:none;width:44px;height:44px;position:relative;flex:none}
+.burger i{position:absolute;left:10px;right:10px;height:3px;background:#fff;transition:transform .25s var(--e),top .25s var(--e)}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:26px}
+.burger[aria-expanded=true] i{top:21px}
+.burger[aria-expanded=true] i:nth-child(1){transform:rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){transform:rotate(-45deg)}
+
+/* hero */
+.hero{background:var(--tar);color:#fff;position:relative;overflow:hidden}
+.hero-in{width:min(1240px,100% - 56px);margin-inline:auto;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:56px;align-items:end;padding:56px 0 52px}
+h1{font-size:clamp(54px,9.2vw,148px);font-weight:900;font-stretch:62%;line-height:.88;letter-spacing:-.012em;text-wrap:balance}
+h1 mark,.hl{position:relative;z-index:0;white-space:nowrap;color:var(--tar);padding:0 .12em;margin:0 -.04em}
+h1 mark::before,.hl::before{content:"";position:absolute;z-index:-1;inset:.06em -.02em .02em;background:var(--hi);clip-path:polygon(0 12%,3% 4%,22% 7%,41% 0,63% 6%,84% 2%,100% 9%,98% 46%,100% 88%,91% 97%,70% 93%,49% 100%,27% 95%,8% 99%,1% 90%,2% 52%);transform-origin:left;transform:scaleX(0);transition:transform .55s cubic-bezier(.7,0,.2,1) 1.35s}
+.ready h1 mark::before,.hl.seen::before{transform:none}
+h1 mark{color:#fff;transition:color .2s 1.5s}
+.ready h1 mark{color:var(--tar)}
+.hero-side p{color:#C5CAD0;font-size:19px;max-width:24em}
+.check{margin-top:26px}
+.check label{display:block;font-weight:800;font-stretch:75%;font-size:26px;margin-bottom:10px;color:#fff}
+.check-row{display:flex;gap:8px}
+.check-out{font-size:17px;line-height:1.45;color:#fff;display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--e)}
+.check-out>span{overflow:hidden}
+.check-out.show{grid-template-rows:1fr}
+.check-out span>span{display:block;padding-top:14px}
+.check-out b{color:var(--vest)}.check-out.no b{color:var(--hi)}
+.check-out .go{color:#fff;margin-left:6px}
+select,input:not([type=checkbox]):not([type=range]){width:100%;min-height:50px;padding:0 14px;border:2px solid var(--ink);border-radius:4px;background:#fff;color:var(--ink);transition:box-shadow .15s}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2315171A' stroke-width='2.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+select:focus,input:focus{box-shadow:4px 4px 0 var(--hi);outline:0}
+.hero-photo{position:relative;height:min(72vh,720px);overflow:hidden}
+.hero-photo img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;object-position:50% 60%;will-change:transform}
+.hero-photo figcaption{position:absolute;right:max(28px,calc((100% - 1240px)/2));bottom:18px;background:var(--tar);color:#fff;font-size:15px;font-weight:600;padding:8px 12px}
+/* the plow: a bank of snow pushed off the hero on load */
+.plow{position:absolute;inset:0;z-index:5;background:var(--snowbank);transform:translateX(0);pointer-events:none}
+.plow::before{content:"";position:absolute;right:100%;top:0;bottom:0;width:120px;margin-right:-1px;background:var(--snowbank);clip-path:polygon(100% 0,100% 100%,62% 100%,30% 96%,58% 90%,12% 84%,48% 77%,22% 70%,60% 62%,8% 55%,44% 47%,26% 40%,64% 33%,16% 25%,52% 18%,30% 10%,66% 4%,40% 0)}
+.plow::after{content:"";position:absolute;left:-10px;top:0;bottom:0;width:10px;background:var(--hi)}
+.ready .plow{animation:plow 1.2s cubic-bezier(.75,0,.2,1) .15s forwards}
+@keyframes plow{to{transform:translateX(calc(100% + 140px))}}
+
+/* hi-vis stripe, straight off the crew's vests */
+.hivis{height:22px;background:linear-gradient(var(--vest) 0 32%,var(--tape) 32% 68%,var(--vest) 68%)}
+
+.sec-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:56px;align-items:end;margin-bottom:48px}
+.sec-top p{color:var(--ink2);padding-bottom:8px}
+
+/* passes */
+.snow{padding:96px 0 104px}
+.pass{border-top:3px solid var(--ink)}
+.pass:last-child{border-bottom:3px solid var(--ink)}
+.pass-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) auto;gap:24px;align-items:center;width:100%;text-align:left;padding:22px 16px;margin:0 -16px;width:calc(100% + 32px);transition:background .18s}
+.pass-head:hover{background:var(--hi)}
+.pass-name{font-size:clamp(34px,4.6vw,64px);font-weight:800;font-stretch:68%;line-height:1}
+.pass-for{color:var(--ink2);font-size:18px}
+.pass-head:hover .pass-for{color:var(--ink)}
+.pass-price{display:flex;align-items:baseline;gap:14px;white-space:nowrap}
+.pass-price b{font-size:clamp(34px,4.6vw,64px);font-weight:800;font-stretch:68%;line-height:1;font-variant-numeric:tabular-nums;min-width:3.2ch;text-align:right}
+.pass-price s{font-size:18px;color:var(--ink3)}
+.pass-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--e)}
+.pass-body>div{overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) auto;gap:24px;align-items:start}
+.pass.open .pass-body{grid-template-rows:1fr}
+.pass-body p{grid-column:2;color:var(--ink2);padding-bottom:28px}
+.pass-body .go{grid-column:1;grid-row:1;justify-self:start;margin:4px 0 28px}
+.fine{font-size:15px;line-height:1.5;color:var(--ink3);margin-top:22px;max-width:46em}
+
+/* storm: the photo holds still while the steps scroll past */
+.storm{background:var(--tar);color:#fff;padding:0}
+.storm-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:88px}
+.storm-photos{position:sticky;--h:min(64vh,430px);top:calc(64px + (100vh - 64px - var(--h))/2);height:var(--h);margin:calc((100vh - 64px - var(--h))/2) 0;overflow:hidden}
+.storm-photos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s,transform 1.6s var(--e)}
+.storm-photos img.on{opacity:1;transform:none}
+.storm-clock{font-size:56px!important;position:absolute;left:0;bottom:0;background:var(--hi);color:var(--tar);font-weight:900;font-stretch:62%;font-size:72px;line-height:1;padding:8px 14px 4px;font-variant-numeric:tabular-nums}
+.storm-clock small{display:block;font-size:15px;font-weight:700;font-stretch:100%;padding:2px 0 8px}
+.storm-clock b{font-weight:900;display:inline-block;min-width:1.1ch;text-align:right}
+.storm-steps{padding:120px 0 40px}
+.storm-steps ol{margin-top:40px}
+.storm-steps li{min-height:62vh;display:flex;flex-direction:column;justify-content:center;padding-left:92px;position:relative;opacity:.32;transition:opacity .4s}
+.storm-steps li.on{opacity:1}
+.storm-steps li>img{display:none}
+.n{position:absolute;left:0;top:50%;transform:translateY(-50%);font-weight:900;font-stretch:62%;font-size:120px;line-height:1;color:transparent;-webkit-text-stroke:2px #fff;transition:color .3s,-webkit-text-stroke-color .3s}
+li.on .n{color:var(--hi);-webkit-text-stroke-color:var(--hi)}
+.storm-steps h3{font-size:clamp(34px,3.6vw,52px);margin-bottom:12px}
+.storm-steps p{color:#C5CAD0;max-width:24em}
+
+/* film */
+.film{background:#000}
+.player{position:relative;display:block;height:min(78vh,760px);overflow:hidden;color:#fff;text-decoration:none}
+.player img,.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.player img{transition:transform 1.2s var(--e),filter .4s;filter:brightness(.72)}
+.player:hover img{transform:scale(1.04);filter:brightness(.6)}
+.player-text{position:absolute;left:max(28px,calc((100% - 1240px)/2));bottom:48px;right:28px;display:grid;grid-template-columns:auto 1fr;column-gap:28px;align-items:center}
+.play{grid-row:span 2;width:120px;height:120px;background:var(--hi);display:grid;place-items:center;transition:transform .25s var(--e)}
+.play svg{width:54px;height:54px;fill:var(--tar)}
+.player:hover .play{transform:scale(1.08)}
+.player-h{font-weight:900;font-stretch:62%;font-size:clamp(40px,6vw,92px);line-height:.92}
+.player-note{font-size:18px;font-weight:600;margin-top:8px}
+.player.playing .player-text{display:none}
+.player.playing video{object-fit:contain;background:#000}
+
+/* yard */
+.yard{padding:104px 0}
+.ba{position:relative;overflow:hidden;aspect-ratio:16/8.4;--x:50%;user-select:none;touch-action:pan-y;background:#cfd6c8}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.ba-clip{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.ba-bar{position:absolute;top:0;bottom:0;left:var(--x);width:6px;margin-left:-3px;background:var(--hi)}
+.ba-bar i{position:absolute;top:50%;left:50%;width:60px;height:60px;margin:-30px;background:var(--hi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M25 21l-9 9 9 9M35 21l9 9-9 9' fill='none' stroke='%2315171A' stroke-width='3.4'/%3E%3C/svg%3E")}
+.ba-tag{position:absolute;top:0;padding:8px 14px;background:var(--tar);color:#fff;font-weight:800;font-stretch:80%;font-size:17px}
+.ba-tag.b{left:0}.ba-tag.a{right:0}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba:has(:focus-visible){outline:4px solid var(--hi);outline-offset:4px}
+.ba-cap{font-size:15px;color:var(--ink3);margin-top:10px}
+.yard-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:start;margin-top:88px}
+.rates>p{color:var(--ink2);margin-top:10px}
+.rates h3{font-size:clamp(34px,3.6vw,52px)}
+.rates dl{margin-top:26px;border-top:3px solid var(--ink)}
+.rates dl div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1.5px solid var(--rule)}
+.rates dl div:last-child{border-bottom:3px solid var(--ink)}
+.rates dt{font-weight:800;font-stretch:75%;font-size:28px}
+.rates dt small{font-weight:500;font-stretch:100%;font-size:16px;color:var(--ink2);margin-left:10px}
+.rates dd{font-weight:800;font-stretch:75%;font-size:28px;font-variant-numeric:tabular-nums}
+.rates .btn{margin-top:22px}
+.fall{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fall img{width:100%;aspect-ratio:3/4;object-fit:cover}
+figcaption{font-size:15px;color:var(--ink3);margin-top:8px}
+
+/* mosaic */
+.work{padding:0 0 104px}
+.work h2{margin-bottom:40px}
+.mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(110px,11.5vw,190px);gap:10px;padding:0 10px}
+.mosaic li{position:relative;overflow:hidden;background:var(--snowbank)}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--e)}
+.mosaic li:hover img{transform:scale(1.05)}
+.mosaic span{position:absolute;left:0;bottom:0;background:var(--tar);color:#fff;font-size:14.5px;font-weight:600;padding:6px 10px;transform:translateY(101%);transition:transform .3s var(--e)}
+.mosaic li:hover span,.mosaic li:focus-within span{transform:none}
+.mosaic .a{grid-column:span 5;grid-row:span 3}.mosaic .b{grid-column:span 3;grid-row:span 3}.mosaic .c{grid-column:span 4;grid-row:span 2}
+.mosaic .d{grid-column:span 4;grid-row:span 3}.mosaic .e{grid-column:span 3;grid-row:span 2}.mosaic .f{grid-column:span 5;grid-row:span 2}
+.mosaic .g{grid-column:span 4;grid-row:span 2}.mosaic .h{grid-column:span 4;grid-row:span 2}
+.mosaic .i{grid-column:span 4;grid-row:span 2}
+
+/* about */
+.about{background:var(--snowbank);padding:104px 0 0;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px}
+.big{font-size:24px;line-height:1.4;font-weight:500}
+.points{margin-top:28px;display:grid;gap:12px;color:var(--ink2)}
+.points b{color:var(--ink);font-weight:800}
+.area-l{margin-top:88px;font-weight:800;font-stretch:80%;font-size:20px}
+.ticker{overflow:hidden;padding:6px 0 40px}
+.ticker-in{display:flex;gap:.5em;width:max-content;font-weight:900;font-stretch:62%;font-size:clamp(72px,12vw,180px);line-height:1;white-space:nowrap;animation:tick 46s linear infinite}
+.ticker:hover .ticker-in{animation-play-state:paused}
+.ticker span{color:transparent;-webkit-text-stroke:2px var(--ink);transition:color .3s}
+.ticker span::after{content:"";display:inline-block;width:.14em;height:.14em;background:var(--ink);margin-left:.5em;vertical-align:middle}
+.ticker span.pick{color:var(--ink);background:linear-gradient(var(--hi),var(--hi)) 0 72%/calc(100% - .64em) .34em no-repeat}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* reviews */
+.reviews{padding:104px 0}
+.reviews h2{font-size:clamp(30px,3vw,40px);margin-bottom:28px}
+.lead blockquote{font-weight:800;font-stretch:68%;font-size:clamp(40px,6vw,88px);line-height:.98;max-width:16em}
+blockquote{font-size:21px;line-height:1.4}
+.reviews figcaption{font-size:16px;font-weight:700;color:var(--ink);margin-top:18px;display:flex;gap:10px;align-items:center}
+.stars{color:var(--hi-d);letter-spacing:1px;font-size:15px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px;padding-top:36px;border-top:3px solid var(--ink)}
+
+/* faq */
+.faq{padding:88px 0 112px}
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px;align-items:start}
+.faq h2{position:sticky;top:104px}
+.qa{border-top:3px solid var(--ink)}
+details{border-bottom:1.5px solid var(--rule)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-weight:800;font-stretch:78%;font-size:26px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:22px;height:22px;background:linear-gradient(var(--ink),var(--ink)) center/100% 3px no-repeat,linear-gradient(var(--ink),var(--ink)) center/3px 100% no-repeat;transition:transform .3s var(--e)}
+details[open]>summary::after{transform:rotate(45deg)}
+summary:hover{color:#000;background:linear-gradient(var(--hi),var(--hi)) 0 100%/100% 3px no-repeat}
+details>div{overflow:hidden}
+details p{padding:0 48px 24px 0;color:var(--ink2);max-width:36em}
+
+/* careers */
+.careers{background:var(--tar);color:#fff;padding:96px 0}
+.car-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start}
+.car-grid p{color:#C5CAD0;margin-top:18px;max-width:26em}
+.apply,.bk{display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:15.5px;font-weight:700}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+legend{font-size:15.5px;font-weight:700;margin-bottom:10px;padding:0}
+fieldset{display:flex;flex-wrap:wrap;gap:8px 22px}
+fieldset legend{width:100%}
+.tick{display:flex;align-items:center;gap:8px;font-weight:500;font-size:17px;cursor:pointer}
+.tick input{width:20px;height:20px;accent-color:var(--hi)}
+.apply .btn{justify-self:start}
+.careers input,.careers select{border-color:#fff}
+.form-out{font-weight:700}
+.careers .form-out{color:var(--vest)}
+.form-out:empty{display:none}
+
+/* footer */
+.foot{background:var(--tar);color:#C5CAD0;padding:72px 0 44px}
+.foot-l{font-weight:800;font-stretch:80%;font-size:24px;color:#fff}
+.foot-tel{display:block;width:max-content;max-width:100%;font-weight:900;font-stretch:62%;font-size:clamp(64px,15.5vw,250px);line-height:.9;color:#fff;text-decoration:none;margin:6px 0 30px -.03em;background:linear-gradient(var(--hi),var(--hi)) 0 100%/0 .08em no-repeat;transition:background-size .5s var(--e),color .2s}
+.foot-tel:hover{background-size:100% .08em}
+.foot-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot nav{display:flex;gap:26px;flex-wrap:wrap}
+.foot nav a{text-decoration:none;font-weight:600;color:#fff}.foot nav a:hover{color:var(--hi)}
+.foot-base{display:flex;gap:22px;align-items:center;margin-top:64px;padding-top:28px;border-top:1px solid #3A4047;font-size:14.5px;line-height:1.6}
+.foot-base img{width:92px;flex:none}
+
+/* booking drawer */
+dialog.book{border:0;padding:0;margin:0 0 0 auto;height:100dvh;max-height:none;width:min(500px,100%);max-width:none;background:#fff;color:var(--ink);border-left:10px solid var(--hi);transform:translateX(100%);transition:transform .4s var(--e),overlay .4s allow-discrete,display .4s allow-discrete}
+dialog.book[open]{transform:none}
+@starting-style{dialog.book[open]{transform:translateX(100%)}}
+dialog.book::backdrop{background:rgba(0,0,0,0);transition:background .4s,overlay .4s allow-discrete,display .4s allow-discrete}
+dialog.book[open]::backdrop{background:rgba(0,0,0,.6)}
+@starting-style{dialog.book[open]::backdrop{background:rgba(0,0,0,0)}}
+.bk{padding:40px 32px;position:relative;align-content:start}
+.bk h2{font-size:56px}
+.bk-sub{color:var(--ink2);margin-top:-6px}
+.x{position:absolute;right:16px;top:16px;width:46px;height:46px;font-size:30px;line-height:1;background:var(--snowbank)}
+.x:hover{background:var(--hi)}
+.bk-warn{background:#FFF4C2;padding:12px 14px;font-size:16px}
+.done{display:grid;gap:12px;padding:22px;background:var(--snowbank);border-left:6px solid var(--hi)}
+.done b{font-size:28px;font-stretch:75%;line-height:1.05}
+.done .btn{justify-self:start}
+
+/* sub-page hero */
+.careers h1{font-size:clamp(44px,6.2vw,92px)}
+.phero{background:var(--tar);color:#fff;padding:72px 0 64px}
+.phero h1{font-size:clamp(48px,7.4vw,116px)}
+.phero p{color:#C5CAD0;font-size:20px;max-width:30em;margin-top:22px}
+.phero .check{max-width:520px}
+/* email offer */
+.signup{background:var(--hi);padding:64px 0}
+.signup-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:end}
+.signup h2{font-size:clamp(44px,6vw,88px)}
+.signup p{margin-top:10px;font-weight:500}
+.signup label{font-size:16px}
+.signup .btn{background:var(--tar);color:#fff;box-shadow:none}
+.signup .btn:hover{background:#000}
+.signup select:focus,.signup input:focus{box-shadow:4px 4px 0 var(--tar)}
+.signup-form{display:grid;gap:8px}
+/* careers extras */
+.file{padding:11px 14px!important;font-size:15px}
+.tick input[type=radio]{width:20px;height:20px;accent-color:var(--hi)}
+.avail{width:100%;border-collapse:collapse;font-size:15px}
+.avail th,.avail td{padding:8px 4px;text-align:center;border-bottom:1px solid #3A4047;font-weight:700}
+.avail tbody th{text-align:left;white-space:nowrap}
+.avail small{display:block;font-weight:400;color:#9BA1A8;font-size:13px}
+.avail input{width:20px;height:20px;accent-color:var(--hi)}
+.avail-set{display:block}
+/* what the business would receive */
+.msg{background:#fff;border:2px solid var(--ink);padding:14px 16px;font-size:16px;line-height:1.5;white-space:pre-line}
+
+/* headings wipe in from under a mask as they arrive */
+.rise{clip-path:inset(0 0 100% 0);transform:translateY(.25em);transition:clip-path .8s var(--e),transform .8s var(--e)}
+.rise.seen{clip-path:inset(-10% 0 -10% 0);transform:none}
+
+@media (max-width:1100px){
+  .nav{position:fixed;left:0;right:0;top:var(--navtop,64px);flex-direction:column;gap:0;background:var(--tar);padding:6px 28px 26px;transform:translateY(-10px);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s var(--e),visibility .25s;margin:0}
+  .nav.open{opacity:1;transform:none;visibility:visible}
+  .nav a{padding:14px 0;font-size:30px;font-weight:800;font-stretch:70%;color:#fff;border-bottom:1px solid #3A4047}
+  .burger{display:block}
+  .tel{margin-left:auto}
+}
+@media (max-width:900px){
+  body{font-size:17px}
+  .hero-in,.sec-top,.yard-grid,.about-grid,.faq-grid,.car-grid,.signup-grid{grid-template-columns:1fr;gap:28px}
+  .avail small{display:none}.phero{padding:44px 0 40px}
+  .hero-in{padding:36px 0 40px}
+  .hero-photo{height:62vw;min-height:260px}
+  .snow,.yard,.reviews{padding:64px 0}.work{padding-bottom:64px}.about{padding-top:64px}.faq{padding-bottom:72px}.careers{padding:64px 0}
+  .sec-top{margin-bottom:32px}
+  .pass-head{grid-template-columns:1fr auto;gap:4px 16px}
+  .pass-for{grid-column:1;grid-row:2;font-size:16px}
+  .pass-price{grid-row:1/span 2;flex-direction:column-reverse;align-items:flex-end;gap:2px}
+  .pass-body>div{grid-template-columns:1fr}
+  .pass-body p,.pass-body .go{grid-column:1;grid-row:auto}
+  .pass-body p{padding-bottom:14px}
+  .storm-grid{grid-template-columns:1fr}
+  .storm-photos{display:none}
+  .storm-steps{padding:64px 0 24px}
+  .storm-steps li{min-height:0;opacity:1;padding:0 0 44px;display:block}
+  .storm-steps li>img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:18px}
+  .n{position:static;transform:none;font-size:64px;display:block;color:var(--hi);-webkit-text-stroke-color:var(--hi);margin-bottom:4px}
+  .player{height:70vw;min-height:300px}
+  .player-text{bottom:24px;column-gap:16px}
+  .play{width:72px;height:72px}.play svg{width:34px;height:34px}
+  .player-note{font-size:15px}
+  .ba{aspect-ratio:4/3}
+  .yard-grid{margin-top:56px}
+  .mosaic{grid-template-columns:repeat(6,1fr);grid-auto-rows:26vw}
+  .mosaic li:nth-child(n){grid-column:span 3;grid-row:span 1}
+  .mosaic .a,.mosaic .d{grid-column:span 6!important;grid-row:span 2!important}
+  .mosaic span{transform:none;font-size:13px}
+  .quotes{grid-template-columns:1fr;gap:28px;margin-top:40px}
+  .faq h2{position:static}
+  .area-l{margin-top:56px}
+  .foot-base{align-items:flex-start}
+}
+@media (max-width:620px){
+  .wrap,.hero-in{width:calc(100% - 40px)}
+  .top{padding:8px 20px;gap:12px}
+  .tel{display:none}
+  .brand{font-size:17px;gap:7px}.brand img{width:34px}.top .btn{padding:0 14px}.xs{display:none}
+  .top .btn{margin-left:auto;min-height:40px}
+  .check-row{flex-direction:column}
+  .f2{grid-template-columns:1fr}
+  .rates dt small{display:block;margin:0}
+  .hero-photo figcaption{left:20px;right:auto;font-size:13.5px}
+  dialog.book{border-left-width:6px}
+  .bk{padding:32px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .plow{display:none}
+  h1 mark{color:var(--tar)}h1 mark::before,.hl::before{transform:none}
+  .rise{clip-path:none;transform:none}
+  .storm-steps li{opacity:1}
+}
+
+</style>
+</head>
+<body>
+<p class="concept">Redesign concept prepared for Happy Home Owners Inc. Not the company's live website. Forms here do not send anything.</p>
+
+<header class="top" id="top">
+  <a class="brand" href="index.html" aria-label="Happy Home Owners Inc, back to top">
+    <img src="assets/mark.png" alt="" width="44" height="45">
+    <span>Happy Home Owners</span>
+  </a>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="snow-removal.html" data-p="snow">Snow removal</a>
+    <a href="lawn-care.html" data-p="lawn" class="here" aria-current="page">Lawn and yard</a>
+    <a href="index.html#work">Our work</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="index.html#faq">Questions</a>
+    <a href="careers.html" data-p="careers">Careers</a>
+  </nav>
+  <a class="tel" href="tel:+15879683087">587-968-3087</a>
+  <button class="btn" data-open="book"><span>Reserve<span class="xs"> a spot</span></span></button>
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+</header>
+
+<main>
+<section class="phero"><div class="wrap"><h1>Lawn mowing and fall cleanup</h1><p>Priced by the size of your lawn, from $56.25. Edge trimming and driveway edging come with every mow.</p></div></section>
+
+<div class="hivis" aria-hidden="true"></div>
+
+<section class="yard" id="lawn">
+  <div class="wrap">
+    <div class="sec-top">
+      <h2>Before and after</h2>
+      <p>Mowing with edge trimming and driveway edging through the summer. A full cleanup of leaves and debris before winter.</p>
+    </div>
+    <div class="ba" id="ba">
+      <img class="ba-after" src="assets/lawn-after.webp" srcset="assets/lawn-after-800.webp 800w, assets/lawn-after.webp 969w" sizes="(max-width:900px) 100vw, 60vw" alt="The same back yard after mowing, short and even" width="969" height="727">
+      <div class="ba-clip"><img src="assets/lawn-before.webp" srcset="assets/lawn-before-800.webp 800w, assets/lawn-before.webp 969w" sizes="(max-width:900px) 100vw, 60vw" alt="A back yard before service, with knee-high grass" width="969" height="727"></div>
+      <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+      <div class="ba-bar" aria-hidden="true"><i></i></div>
+      <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+    </div>
+    <p class="ba-cap">A back yard we took on. Drag across the photo.</p>
+
+    <div class="yard-grid">
+      <div class="rates">
+        <h3>One-time mow or fall cleanup</h3>
+        <p>Both are priced by the size of your lawn.</p>
+        <dl>
+          <div><dt>Compact <small>up to 500 sq ft</small></dt><dd>$56.25</dd></div>
+          <div><dt>Small <small>501 to 1,500 sq ft</small></dt><dd>$81.25</dd></div>
+          <div><dt>Medium <small>1,501 to 2,500 sq ft</small></dt><dd>$106.25</dd></div>
+          <div><dt>Large <small>2,501 to 3,500 sq ft</small></dt><dd>$143.75</dd></div>
+        </dl>
+        <p class="fine">A mow includes edge trimming and edging along the driveway and walkways. A monthly plan with five visits is also available. Ask us for the price.</p>
+        <button class="btn" data-open="book" data-plan="mow">Book lawn care</button>
+      </div>
+      <div class="fall">
+        <figure><img src="assets/fall-before.webp" srcset="assets/fall-before-800.webp 800w, assets/fall-before.webp 1000w" sizes="(max-width:900px) 100vw, 60vw" alt="A front lawn covered in fallen leaves before a fall cleanup" width="1000" height="1333"><figcaption>Fall cleanup, before</figcaption></figure>
+        <figure><img src="assets/fall-after.webp" srcset="assets/fall-after-800.webp 800w, assets/fall-after.webp 969w" sizes="(max-width:900px) 100vw, 60vw" alt="A front lawn cleared of leaves after a fall cleanup" width="969" height="727"><figcaption>And after</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap"><h2>On the job</h2></div>
+  <ul class="mosaic">
+    <li class="a"><img src="assets/crew-mowing-side.webp" srcset="assets/crew-mowing-side-800.webp 800w, assets/crew-mowing-side.webp 1090w" sizes="(max-width:900px) 100vw, 60vw" alt="A crew member pushing a commercial walk-behind mower"><span>Walk-behind mowing</span></li>
+    <li class="b"><img src="assets/crew-trimming.webp" srcset="assets/crew-trimming-800.webp 800w, assets/crew-trimming.webp 1090w" sizes="(max-width:900px) 100vw, 60vw" alt="A crew member trimming grass around the base of a tree"><span>Trimming around trees</span></li>
+    <li class="d"><img src="assets/grounds-blower-close.webp" srcset="assets/grounds-blower-close-800.webp 800w, assets/grounds-blower-close.webp 1090w" sizes="(max-width:900px) 100vw, 60vw" alt="A crew member with a backpack blower clearing clippings on memorial grounds"><span>Grounds care, blown clean</span></li>
+    <li class="e"><img src="assets/crew-mowing-front.webp" srcset="assets/crew-mowing-front-800.webp 800w, assets/crew-mowing-front.webp 1090w" sizes="(max-width:900px) 100vw, 60vw" alt="A crew member mowing toward the camera"><span>Mowing day</span></li>
+    <li class="f"><img src="assets/lawn-midmow.webp" srcset="assets/lawn-midmow-800.webp 800w, assets/lawn-midmow.webp 969w" sizes="(max-width:900px) 100vw, 60vw" alt="A large shaded lawn partway through a mow"><span>Halfway through a back lawn</span></li>
+    <li class="g"><img src="assets/grounds-blower-wide.webp" srcset="assets/grounds-blower-wide-800.webp 800w, assets/grounds-blower-wide.webp 1090w" sizes="(max-width:900px) 100vw, 60vw" alt="A crew member walking the grounds with a backpack blower"><span>Finishing passes</span></li>
+    <li class="h"><img src="assets/snow-corner.webp" srcset="assets/snow-corner-800.webp 800w, assets/snow-corner.webp 964w" sizes="(max-width:900px) 100vw, 60vw" alt="A cleared corner sidewalk in winter"><span>Corner lot, cleared</span></li>
+    <li class="c"><img src="assets/film-mower.webp" srcset="assets/film-mower-800.webp 800w, assets/film-mower.webp 1292w" sizes="(max-width:900px) 100vw, 60vw" alt="The ride-on mower strapped to the trailer"><span>The ride-on, loaded up</span></li>
+    <li class="i"><img src="assets/snow-house.webp" srcset="assets/snow-house-800.webp 800w, assets/snow-house.webp 964w" sizes="(max-width:900px) 100vw, 60vw" alt="A house with its front walk cleared after snow"><span>Front walk, cleared</span></li>
+  </ul>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <h2>What customers wrote on Google</h2>
+    <figure class="lead"><blockquote>We originally hired them for snow removal, and they did such a great job that we also signed up for their lawn mowing service.</blockquote><figcaption>Kamlesh Agarwal <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></figcaption></figure>
+    <div class="quotes">
+      <figure><blockquote>Their snow removal service is also reliable and efficient, which is especially important during Calgary winters.</blockquote><figcaption>Femi Idowu <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></figcaption></figure>
+      <figure><blockquote>The mowing is clean and even, the edging and trimming are done with great attention to detail.</blockquote><figcaption>Doctor O <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></figcaption></figure>
+      <figure><blockquote>Great service.</blockquote><figcaption>Yeside Akanmu <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="hivis" aria-hidden="true"></div>
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-l">Wake up to a clear driveway. Call or text</p>
+    <a class="foot-tel" href="tel:+15879683087">587-968-3087</a>
+    <div class="foot-row">
+      <button class="btn" data-open="book">Reserve a spot online</button>
+      <nav aria-label="Contact and social"><a href="https://wa.me/15879683087" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/happyhomeownersyyc_/" rel="noopener">Instagram</a><a href="https://www.facebook.com/people/Happy-Home-Owners-Inc/61575958109762/" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@happyhomeownersyyc_" rel="noopener">TikTok</a></nav>
+    </div>
+    <div class="foot-base">
+      <img src="assets/logo.png" alt="Happy Home Owners Inc logo" width="120" height="103">
+      <p>Snow cleared. Smiles delivered. Homes transformed.<br>© 2026 Happy Home Owners Inc, Calgary, Alberta. This page is a redesign concept, not the company's live website.</p>
+    </div>
+  </div>
+</footer>
+</main>
+
+<dialog class="book" id="book" aria-labelledby="bk-h">
+  <form method="dialog" class="bk" id="bk" data-demo>
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <h2 id="bk-h">Reserve a spot</h2>
+    <p class="bk-sub">Tell us where you are and what you need.</p>
+    <label>What do you need?<select name="svc" id="bk-svc">
+      <option value="laned">Laned Home pass, $500</option><option value="standard">Standard pass, $800</option><option value="corner">Corner House pass, $1,000</option><option value="premium">Premium pass, $2,000</option><option value="mow">Lawn mowing</option><option value="fall">Fall cleanup</option></select></label>
+    <label>Neighbourhood<select name="hood" id="bk-hood"><option value="">Choose</option><option>Alpine</option><option>Belmont</option><option>Creekstone</option><option>Evergreen</option><option>Legacy</option><option>Silverado</option><option>Vermilion Hill</option><option>Walden</option><option>Yorkville</option><option value="other">Somewhere else</option></select></label>
+    <label>Street address<input name="addr" autocomplete="street-address" required></label>
+    <div class="f2"><label>Your name<input name="name" autocomplete="name" required></label><label>Mobile number<input name="tel" type="tel" autocomplete="tel" required></label></div>
+    <p class="bk-warn" id="bk-warn" hidden>That is outside this winter's snow route. Send it anyway and we will call to tell you what we can do.</p>
+    <button class="btn wide" type="submit">Send my request</button>
+    <p class="form-out" role="status" aria-live="polite"></p>
+  </form>
+</dialog>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var FILM='https://happyhomeowners.ca/wp-content/uploads/2026/08/copy_26549958-CE8B-4073-8343-7D3315FF1045.mp4';
+
+function ready(){document.body.classList.add('ready')}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){requestAnimationFrame(ready)});setTimeout(ready,1200)}else ready();
+
+/* header and menu */
+var top=$('.top'),nav=$('#nav'),burger=$('.burger');
+function menu(o){nav.style.setProperty('--navtop',top.getBoundingClientRect().bottom+'px');nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)}
+burger.addEventListener('click',function(){menu(!nav.classList.contains('open'))});
+nav.addEventListener('click',function(e){if(e.target.tagName==='A')menu(false)});
+addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
+var IO='IntersectionObserver' in window;
+/* headings rise into place; the hero photo drifts a little as you scroll */
+if(IO&&!calm){
+  var hs=$$('h2:not(#bk-h),.lead blockquote,.foot-tel');
+  hs.forEach(function(el){el.classList.add('rise')});
+  var seen=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');seen.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  hs.forEach(function(el){seen.observe(el)});
+  var hp=$('#hero-photo'),hi=hp&&$('img',hp);
+  var par=hp&&function(){var b=hp.getBoundingClientRect();if(b.bottom<0||b.top>innerHeight)return;hi.style.transform='translateY('+((b.top/innerHeight)*-9).toFixed(2)+'%)'};
+  if(hp){addEventListener('scroll',par,{passive:true});par()}
+}
+
+/* neighbourhood check */
+var picked='',out=$('#chk-out');
+if($('#checker'))$('#checker').addEventListener('submit',function(e){
+  e.preventDefault();var v=$('#hood').value;if(!v){$('#hood').focus();return}
+  picked=v;var no=v==='other';
+  out.classList.remove('show');out.classList.toggle('no',no);
+  out.innerHTML='<span><span>'+(no?'<b>Not on this winter\'s snow route.</b> Call 587-968-3087 and we will tell you what we can do.':'<b>Yes, we clear '+v+'.</b> Passes start at $500 for the season. <button type="button" class="go" data-open="book">Reserve a spot</button>')+'</span></span>';
+  void out.offsetHeight;out.classList.add('show');
+  $$('#area span').forEach(function(s){s.classList.toggle('pick',s.textContent===v)});
+});
+
+/* passes: one open at a time */
+var plan='laned';
+function openPass(p){$$('.pass').forEach(function(x){var on=x===p;x.classList.toggle('open',on);$('.pass-head',x).setAttribute('aria-expanded',on)});if(p)plan=p.dataset.plan}
+$$('.pass-head').forEach(function(h){h.addEventListener('click',function(){var p=h.parentNode;openPass(p.classList.contains('open')?null:p)})});
+openPass($('.pass'));
+
+/* storm: steps drive the pinned photo and the clock */
+(function(){if(!$('#steps'))return;var steps=$$('#steps li'),imgs=$$('.storm-photos img'),clock=$('#clock'),H=[0,24,24],cur=-1,shown=0,raf;
+  function count(to){cancelAnimationFrame(raf);if(calm){clock.textContent=to;shown=to;return}var from=shown,t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/700);shown=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));clock.textContent=shown;if(k<1)raf=requestAnimationFrame(f)})(t0)}
+  function set(i){if(i===cur)return;cur=i;steps.forEach(function(s,n){s.classList.toggle('on',n===i)});imgs.forEach(function(s,n){s.classList.toggle('on',n===i)});count(H[i])}
+  if(!IO)return;
+  var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)set(steps.indexOf(e.target))})},{rootMargin:'-48% 0px -48% 0px'});
+  steps.forEach(function(s){o.observe(s)});
+})();
+
+/* before and after */
+(function(){var ba=$('#ba');if(!ba)return;var r=$('.ba-range',ba),set=function(){ba.style.setProperty('--x',r.value+'%')};r.addEventListener('input',set);set();
+  if(!calm&&IO){var o=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;o.disconnect();var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1600);r.value=50+Math.sin(k*Math.PI*2)*24*(1-k*.4);set();if(k<1)requestAnimationFrame(f);else{r.value=50;set()}})(t0)},{threshold:.7});o.observe(ba)}
+})();
+
+/* film: plays in place where outside media is allowed, otherwise the link opens it */
+(function(){var pl=$('#player');if(!pl)return;var inline=false,probe=new Image();
+  probe.onload=function(){inline=true;$('#player-note').textContent='Watch the crew\'s film. 54 seconds.'};
+  probe.src='https://happyhomeowners.ca/wp-content/uploads/2026/10/cropped-Happy-Home-Owners-INC-trasnsparent-Logo-270x270.png';
+  pl.addEventListener('click',function(e){
+    if(!inline||pl.classList.contains('playing'))return;
+    e.preventDefault();
+    var v=document.createElement('video');v.controls=true;v.playsInline=true;v.src=FILM+'#t=2';v.poster=$('img',pl).src;
+    v.addEventListener('error',function(){pl.classList.remove('playing');v.remove();$('img',pl).style.display='';inline=false;$('#player-note').textContent='Watch the crew\'s film. 54 seconds, opens in a new tab.'});
+    $('img',pl).style.display='none';pl.appendChild(v);pl.classList.add('playing');pl.removeAttribute('href');
+    var p=v.play();if(p&&p.catch)p.catch(function(){});
+  });
+})();
+
+/* faq */
+$$('.qa details').forEach(function(d){var s=$('summary',d),body=$('div',d);
+  s.addEventListener('click',function(e){if(calm||!body.animate)return;e.preventDefault();
+    if(d.open){var a=body.animate([{height:body.offsetHeight+'px'},{height:0}],{duration:260,easing:'cubic-bezier(.22,.7,.2,1)'});a.onfinish=function(){d.open=false}}
+    else{d.open=true;body.animate([{height:0},{height:body.offsetHeight+'px'}],{duration:320,easing:'cubic-bezier(.22,.7,.2,1)'})}
+  });
+});
+
+/* booking drawer */
+var dlg=$('#book'),bk=$('#bk');
+function warn(){$('#bk-warn').hidden=!($('#bk-hood').value==='other'&&/laned|standard|corner|premium/.test($('#bk-svc').value))}
+function openBook(p){
+  var d=$('.done',bk);if(d)d.remove();$$('label,.f2,button[type=submit],.bk-sub',bk).forEach(function(n){n.hidden=false});
+  $('#bk-svc').value=p||plan;if(picked)$('#bk-hood').value=picked;warn();menu(false);
+  if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+}
+$('#bk-hood').addEventListener('change',warn);$('#bk-svc').addEventListener('change',warn);
+document.addEventListener('click',function(e){
+  var o=e.target.closest('[data-open]');if(o){openBook(o.dataset.plan);return}
+  if(e.target.closest('[data-close]')||e.target===dlg)dlg.close();
+});
+
+/* demo forms: nothing leaves the page */
+$$('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
+  if(f===bk){$$('label,.f2,button[type=submit],.bk-warn,.bk-sub',bk).forEach(function(n){n.hidden=true});
+    var d=document.createElement('div');d.className='done';d.setAttribute('role','status');
+    var g=function(n){return bk.elements[n]},svc=g('svc').options[g('svc').selectedIndex].text,hood=g('hood').value==='other'?'outside the route':(g('hood').value||'not given');
+    d.innerHTML='<b>Here is the message the crew would get.</b><p class="msg"></p><span>Demo only. Nothing was sent or saved.</span><button type="button" class="btn" data-close>Close</button>';
+    $('.msg',d).textContent='New request: '+svc+'\n'+g('addr').value+' ('+hood+')\n'+g('name').value+', '+g('tel').value;bk.appendChild(d)}
+  else $('.form-out',f).textContent='Demo only. Nothing was sent or saved.';
+})});
+})();
+
+</script>
+</body>
+</html>
